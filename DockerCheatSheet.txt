@@ -1,0 +1,17 @@
+Dissection commande quick start node red:
+docker run              - run this container, initially building locally if necessary
+-it                     - attach a terminal session so we can see what is going on
+-p 1880:1880            - connect local port 1880 to the exposed internal port 1880
+-v node_red_data:/data  - mount a docker named volume called `node_red_data` to the container /data directory so any changes made to flows are persisted
+--name mynodered        - give this machine a friendly local name
+nodered/node-red        - the image to base it on - currently Node-RED v1.2.0
+
+-Ctrl+p Ctrl+q : detache fenetre docker du terminal
+-docker attach X :  réattache le conteneur X
+-docker start X : redémarre le conteneur X
+-docker stop X : stoppe le conteneur
+
+-docker volume create --name X : crée un volume pour stocker des données en dehors du conteneur
+-docker run -it -p 1880:1880 -v X:/data --name Y Z : lancer le conteneur avec ce volume
+-docker cp  X:/data  /your/backup/directory : copier les données du volume vers un dossier local (pendant que le conteneur tourne)
+
