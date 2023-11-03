@@ -1,0 +1,23 @@
+-docker pull mongo:latest = pull le conteneur mongo
+-docker run -d -p 27017:27017 --name=mongo-example mongo:latest = lancer le conteneur
+-docker exec -it mongo-example mongosh = acceder au shell mongoDB de notre conteneur
+
+CheatSheet:
+-db             : display la database courrante
+-use X: switche sur la database X, ou la crée
+-db.X.insertOne( { x: 1 } ); : insère un document dans la collection X, ou crée la collection X
+-show collections : montre les collections de notre db
+-db.X.find() : montre le contenu de la collection X
+db.X.method() :
+    -db fait réference à la database courrante
+    -X est la collection
+    -method la methode que l'on veut utiliser
+-db.getCollection("X").method() : getCollection si notre nom de collection comporte des espaces ou rentre en conflit avec des methodes
+-Ctrl+D : exit mongo shell
+
+Créer container mongoDB avec volume:
+docker volume create --name=mongodata
+docker run -d -p 27017-27019:27017-27019 --name mymongodb -v mongodata:/data/db/ mongo:4.2.0
+docker start mymongodb
+
+

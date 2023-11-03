@@ -6,12 +6,13 @@ docker run              - run this container, initially building locally if nece
 --name mynodered        - give this machine a friendly local name
 nodered/node-red        - the image to base it on - currently Node-RED v1.2.0
 
--Ctrl+p Ctrl+q : detache fenetre docker du terminal
+-Ctrl+p Ctrl+q   : detache fenetre docker du terminal
+-docker ps -a    : état de tout les conteneurs
 -docker attach X :  réattache le conteneur X
--docker start X : redémarre le conteneur X
--docker stop X : stoppe le conteneur
+-docker start X  : redémarre le conteneur X
+-docker stop X   : stoppe le conteneur
 
--docker volume create --name X : crée un volume pour stocker des données en dehors du conteneur
--docker run -it -p 1880:1880 -v X:/data --name Y Z : lancer le conteneur avec ce volume
+-docker volume create --name X              : crée un volume pour stocker des données en dehors du conteneur
+-docker run -it -p 1880:1880 -v X           :/data --name Y Z : lancer le conteneur avec ce volume
 -docker cp  X:/data  /your/backup/directory : copier les données du volume vers un dossier local (pendant que le conteneur tourne)
 

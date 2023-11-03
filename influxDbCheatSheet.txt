@@ -1,0 +1,11 @@
+-influx : start influxDB shell
+-CREATE DATABASE X
+-SHOW DATABASES
+-USE X : selectionne la db X
+-SHOW MEASUREMENTS : liste les mesures
+-SELECT * FROM X : select measurement for name X
+-DROP MEASUREMENTS X : drop measurement for X
+-SHOW FIELD KEYS FROM "X"
+-SELECT "power" FROM "drilling" WHERE ("module_id"='rover') AND time >= now() - 9h
+-SHOW SERIES
+-DROP SERIES FROM "drilling" WHERE ("module_id" = 'oppy')
