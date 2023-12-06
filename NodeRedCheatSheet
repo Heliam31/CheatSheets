@@ -1,3 +1,4 @@
+sudo systemctl start docker
 Lancer node red:
  -Version pas sauvegardé (quick start):
     docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
